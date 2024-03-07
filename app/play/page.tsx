@@ -16,10 +16,12 @@ const Page: NextPage =  () => {
 
     const onSubmit = (e: FormEvent) => {
         e.preventDefault();
-        if (value === constants[step].value) {
+        if (value.toLowerCase() === constants[step].value.toLowerCase()) {
             setStep(step + 1);
             setValue("");
-            inputRef.current.value = "";
+            if (inputRef.current) {
+                inputRef.current.value = "";
+            }
             setError(null);
         } else {
             setError("Ответ не правильный. Продолжай искать ;)")
