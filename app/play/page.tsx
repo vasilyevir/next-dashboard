@@ -36,19 +36,33 @@ const Page: NextPage =  () => {
         alignItems: "center",
         flexDirection: "column",
         gap: "20px",
+        padding: "120px"
     }}
     onSubmit={onSubmit}
     >
         <h1 style={{
             textAlign: "center"
         }}>Step {step}: <br/> {constants[step].question}</h1>
-        <label htmlFor="value">
-            <input id="value" ref={inputRef} onChange={onChange}/>
+        <label htmlFor="value" style={{
+            width: "100%",
+            borderRadius: "5px",
+        }}>
+            <input style={{
+                width: "100%",
+                padding: "10px",
+                borderRadius: "5px",
+            }} id="value" ref={inputRef} onChange={onChange}/>
         </label>
         <span style={{
             color: "red"
         }}>{error}</span>
-        <button type="submit">Send</button>
+        <button style={{
+            width: "100%",
+            padding: "10px",
+            borderRadius: "5px",
+            backgroundColor: "#2a2a71",
+            color: "white"
+        }} type="submit">Send</button>
     </form>);
 }
 
